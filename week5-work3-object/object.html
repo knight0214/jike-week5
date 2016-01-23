@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>js对象实例</title>
+    <script type="text/javascript">
+    function test() {
+        var arr = document.getElementById('arr').value; //获取对象
+        var a = arr.split(""); //将对象转化为数组
+        var max; //定义max用来存放出现最多的字母
+        var result = 0; //定义result用来存放出现的次数
+        var position = []; //定义position用来存放数组的位置
+        for (var i = 0; i < a.length; i++) {
+            for (var j = 0, count = 0; j < a.length; j++) {
+                if (a[i] == a[j]) {
+                    count = count + 1;
+                }
+            }
+            if (count > result) {
+                result = count;
+                max = a[i];
+            }
+        }
+        for (var k = 0; k < a.length; k++) {
+            if (a[k] == max) {
+                position.push(k);
+            }
+        }
+        alert("出现最多的元素是：" + max + "|" + "出现的次数是：" + result + "|" + "位置分别是：" + position);
+    }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" id="arr" placeholder="请输入一组字母如：abc">
+        <input type="submit" value="确定" onclick="test()">
+    </form>
+</body>
+
+</html>

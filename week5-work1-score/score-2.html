@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>分数等级分类</title>
+    <script type="text/javascript">
+    function studentLevel() {
+        var stname = document.getElementById('stname').value;
+        var score = document.getElementById('score').value;
+        var level;
+        if (score > 100 || score < 0) {
+            alert("请输入正确的分数");
+        } else {
+            level = parseInt((100 - score) / 10) + 1;
+            alert("根据成绩" + stname + "是" + level + "等");
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <form>
+        <input type="text" name="stname" id="stname" placeholder="请输入学生的名字">
+        <input type="number" name="score" id="score" placeholder="请输入学生的分数">
+        <input type="submit" value="确定" onclick="studentLevel()"></input>
+    </form>
+</body>
+
+</html>
